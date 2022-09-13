@@ -16,9 +16,9 @@
         <div class="logo">    <img src="{% static '/images/logo.png/' %}" alt="" width="80" height="80"></div>
     
         <ul>
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="sign.html">SIGN UP</a></li>
-            <li><a href="login.html">LOGIN</a></li>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'sign' %}">SIGN UP</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
         </ul>
     </nav>
     <div class="app">

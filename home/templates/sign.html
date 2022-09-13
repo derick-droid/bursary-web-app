@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css/'%}">
+    <title>sign up</title>
+</head>
+<body>
+    <nav>
+        <!-- navigation bar -->
+        <div class="logo">    <img src="{% static '/images/logo.png/'%}" alt="" width="80" height="80"></div>
+    
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'sign' %}">SIGN UP</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+        </ul>
+    </nav>
+    <div class="sign">
+        <form>
+            <div class="name">
+                 <label for="email">FULL NAME</label>
+                 <br>
+             <input type="text" name="name"  placeholder="enter your full name" size="50" required = "required">
+
+              </div>
+        
+             <br>
+           
+            <div class="email">
+                <label for="email">Email</label>
+                <br>
+             <input type="text" name="email"  placeholder="enter your email" size="50" required = "required">
+             </div>
+             <br>
+        
+            
+        
+             <div class="password">
+                 <label for="password">Enter Password</label>
+                 <br>
+                 <input type="password" name="password" placeholder="enter password" size="50" required = "required">
+             </div>
+             <br>
+        
+             <div class="password">
+                <label for="password">Confirm  Password</label>
+                <br>
+                <input type="password" name="password" placeholder="enter password" size="50" required = "required">
+            </div>
+            <br>
+            <input type="submit" value="SIGN UP"></a>
+            
+    
+        </form>
+
+    </div>
+    
+    
+</body>
+</html>
