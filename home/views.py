@@ -15,3 +15,11 @@ def sign(request):
 # login page
 def login(request):
     return render(request, "login.html")
+
+# polling form
+def polling(request):
+    return render(request, "polling.html")
+
+# family form
+def family(request):
+    return render(request, "family.html")
