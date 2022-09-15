@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from unicodedata import name
+from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
 
 #welcome login page
 def index(request):
@@ -10,7 +13,21 @@ def home(request):
 
 # sign page
 def sign(request):
-    return render(request, "home/sign.html")
+    
+    
+     if request.method == "POST":
+         full_name = request.POST["name"]
+         email = request.POST["email"]
+         password = request.POST["password"]
+         confirm_password = request.POST["password2"]
+         
+         my_user = User.objects.create_user(full_name,email,password)
+         my_user.save()
+         
+         messages.success(request, "Account created successfully ")
+         return redirect("index")
+
+     return render(request, "home/sign.html")
 
 # login page
 def login(request):

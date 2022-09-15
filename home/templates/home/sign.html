@@ -22,7 +22,8 @@
         </ul>
     </nav>
     <div class="sign">
-        <form>
+        <form action="" method="POST">
+            {% csrf_token %}
             <div class="name">
                  <label for="email">FULL NAME</label>
                  <br>
@@ -51,7 +52,7 @@
              <div class="password">
                 <label for="password">Confirm  Password</label>
                 <br>
-                <input type="password" name="password" placeholder="enter password" size="50" required = "required">
+                <input type="password" name="password2" placeholder="enter password" size="50" required = "required">
             </div>
             <br>
             <input type="submit" value="SIGN UP"></a>
