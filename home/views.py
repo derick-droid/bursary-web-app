@@ -38,17 +38,18 @@ def sign(request):
 # login page
 def login(request):
     if request.method == "POST":
-        email = email.request.POST["email"]
-        password = password.request.POST["password"]
-        user = authenticate("email = email", "password = password")
+        email = request.POST["email"]
+        password = request.POST["password"]
+        user = authenticate(email = email, password = password)
         
         if user is not None:
             login(request, user)
-            messages.success(request, f"You are logged in successfully")
+            messages.success(request, "You are logged in successfully")
             return redirect("home")
         else:
             messages.error(request, "Error in loggin in")
-            return redirect (request, "login")
+            return redirect( "login")
+    
     return render(request, "home/login.html")
 
 # polling form
