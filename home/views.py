@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
+from django.contrib.auth.forms import UserCreationForm
 
 
 #welcome login page
@@ -15,9 +16,7 @@ def home(request):
 
 # sign page
 def sign(request):
-    
-    
-     if request.method == "POST":
+    if request.method == "POST":
          full_name = request.POST["name"]
          email = request.POST["email"]
          password = request.POST["password"]
@@ -29,10 +28,10 @@ def sign(request):
          messages.success(request, "Account created successfully ")
          return redirect("home")
      
-     messages.error(request, "An error occurred while creating the account ")
+         messages.error(request, "An error occurred while creating the account ")
         
 
-     return render(request, "home/sign.html")
+    return render(request, "home/sign.html")
 
 
 # login page
