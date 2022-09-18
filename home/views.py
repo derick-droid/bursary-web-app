@@ -8,6 +8,16 @@ from django.contrib.auth import authenticate,login
 
 #welcome login page
 def index(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(username = username, password = password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect("home")
+        else:
+            return redirect("index")
     return render(request, "home/index.html")
 
 # home page
@@ -36,21 +46,7 @@ def sign(request):
 
 # login page
 def login_auth(request):
-#     from django.contrib.auth import authenticate, login
 
-# def my_view(request):
-#     username = request.POST['username']
-#     password = request.POST['password']
-#     user = authenticate(username=username, password=password)
-    # if user is not None:
-    #     if user.is_active:
-    #         login(request, user)
-    #         # Redirect to a success page.
-    #     else:
-    #         # Return a 'disabled account' error message
-    #         ...
-    # else:
-    #     # Return an 'invalid login' error message.
     if request.method == "POST":
         username= request.POST["username"]
         password = request.POST["password"]

@@ -1,4 +1,4 @@
-# from xml.etree.ElementInclude import include
+from xml.etree.ElementInclude import include
 from unicodedata import name
 from django.urls import path
 from . import views
