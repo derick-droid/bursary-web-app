@@ -1,6 +1,6 @@
 from unicodedata import name
 from django.shortcuts import render,redirect
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.forms import UserCreationForm
@@ -22,13 +22,13 @@ def sign(request):
          password = request.POST["password"]
          confirm_password = request.POST["password2"]
          
-         my_user = User.objects.create_user(full_name,email,password)
+         my_user = User.objects.create_user(full_name, email,password)
          my_user.save()
          
          messages.success(request, "Account created successfully ")
          return redirect("home")
      
-         messages.error(request, "An error occurred while creating the account ")
+        #  messages.error(request, "An error occurred while creating the account ")
         
 
     return render(request, "home/sign.html")
@@ -39,15 +39,17 @@ def login(request):
     if request.method == "POST":
         email = request.POST["email"]
         password = request.POST["password"]
-        user = authenticate(email = email, password = password)
+        user = auth.authenticate(email = email, password = password)
         
         if user is not None:
-            login(request, user)
-            messages.success(request, "You are logged in successfully")
+            auth.login(request, user)
+            # messages.success(request, "You are logged in successfully")
             return redirect("home")
         else:
-            messages.error(request, "Error in loggin in")
+            # messages.error(request, "Error in loggin in")
             return redirect( "login")
+    else:
+        return render(request, "home/login.html")
     
     return render(request, "home/login.html")
 
