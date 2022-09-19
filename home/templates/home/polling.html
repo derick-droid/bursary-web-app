@@ -15,11 +15,15 @@
         <div class="logo">    <img src="{% static 'images/logo.png' %}" alt="" width="80" height="80"></div>
     
         
+       
         <ul>
             <li><a href="{% url 'home' %}">HOME</a></li>
+            {% if user.authenticated %}
+            <li><a href="{% url 'login' %}">LOGOUT</a></li>
+            {% else %}
             <li><a href="{% url 'sign' %}">SIGN UP</a></li>
             <li><a href="{% url 'login' %}">LOGIN</a></li>
-            <li><a href="{% url 'login' %}">LOGOUT</a></li>
+            {% endif %}
 
         </ul>
     </nav>
