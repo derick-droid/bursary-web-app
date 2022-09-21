@@ -16,7 +16,7 @@
        
         <ul>
             <li><a href="{% url 'home' %}">HOME</a></li>
-            {% if user.authenticated %}
+            {% if user.is_authenticated %}
             <li><a href="{% url 'login' %}">LOGOUT</a></li>
             {% else %}
             <li><a href="{% url 'sign' %}">SIGN UP</a></li>

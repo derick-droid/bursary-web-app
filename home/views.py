@@ -71,3 +71,7 @@ def polling(request):
 # family form
 def family(request):
     return render(request, "home/family.html")
+
+def logout(request):
+    logout(request)
+    return redirect("login")
