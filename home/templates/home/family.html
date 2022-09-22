@@ -1,47 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/css/style.css/' %}">
 
-    <title>home page</title>
-</head>
-<body>
-    <nav>
-        <!-- navigation bar -->
-        <div class="logo">    <img src="{% static '/images/logo.png'%}" alt="" width="80" height="80"></div>
-    
-     
-       
-        <ul>
-            <li><a href="{% url 'home' %}">HOME</a></li>
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'login' %}">LOGOUT</a></li>
-            {% else %}
-            <li><a href="{% url 'sign' %}">SIGN UP</a></li>
-            <li><a href="{% url 'login' %}">LOGIN</a></li>
-            {% endif %}
+{% extends 'base.html' %}
 
-        </ul>
-    </nav>
-    <!-- <div class="app">
-        <p>
-            <b>INSTRUCTIONS</b>
-            <ul>
-                <li>
-                    Kindly provide your information in legible CAPITAL letters.
-                </li>
-                <li>
-                    Submission of incomplete form may lead to disqualification.
-                </li>
-                <li>
-                    All duly filled forms to be delivered to the NG-CDF Office at Wath Ong’er for processing.
-                </li>
-            </ul>
-        </p> -->
+{% block content %}
         <div class="containers">
             <!-- <div class="title">Please fill this form </div>
             <h3>PART A :TO BE FILLED BY THE APPLICANT / PARENT / GUARDIAN</h3> -->
@@ -166,5 +126,6 @@
         </form>
     </div>
 </div>
+{% endblock content %}
 </body>
 </html>
