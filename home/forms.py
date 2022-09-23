@@ -1,9 +1,8 @@
-from socket import fromshare
 from django import forms
 
 class PersonalForm():
     name = forms.CharField()
-    Gender = forms.ChoiceField.choices[("male", "male")("female", "female") ("other", "other")]
-    DATE_OF_BIRTH = forms.TimeField(required = True)
-    ID_NO_passport = forms.IntegerField(required=True)
+    gender = forms.ChoiceField(choices=[("male", "Male")("female", "Female") ("other", "Other")], widget=forms.RadioSelect)
+    DATE_OF_BIRTH = forms.TimeField(required = True, label="DATE OF BIRTH")
+    ID_NO_passport = forms.IntegerField(required=True, label="ID.NO/PASSPORT")
     

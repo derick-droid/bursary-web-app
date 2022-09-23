@@ -3,7 +3,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
-# from django.contrib.auth.forms import UserCreationForm
+from .forms import PersonalForm
+from django.contrib.auth.forms import UserCreationForm
 
 
 #welcome login page
@@ -20,9 +21,7 @@ def index(request):
             return redirect("index")
     return render(request, "home/index.html")
 
-# home page
-def home(request):
-    return render(request, "home/home.html")
+
 
 # sign page
 def sign(request):
@@ -63,6 +62,17 @@ def login_auth(request):
         return render(request, "home/login.html")
     
     return render(request, "home/login.html")
+
+# home page
+def home(request):
+    form  = PersonalForm()
+    
+    context = {
+        "form":form,  
+    }
+    
+    return render(request, "home/home.html", context)
+
 
 # polling form
 def polling(request):
