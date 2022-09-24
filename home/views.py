@@ -64,12 +64,23 @@ def login_auth(request):
     return render(request, "home/login.html")
 
 # home page
-def home(request):
-    form  = PersonalForm()
-    
-    context = {
+def home(request):   
+    if request.method == "POST":
+        form  = PersonalForm(request.POST)
+       
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            DATE_OF_BIRTH = form.cleaned_data[" DATE_OF_BIRTH"]
+            ID_NO_passport = form.cleaned_data["ID_NO_passpor"]
+            print("name")
+            print(" DATE_OF_BIRTH")
+            print("ID_NO_passport")
+    else:
+     form = PersonalForm()
+     context = {
         "form":form,  
-    }
+        }
+
     
     return render(request, "home/home.html", context)
 
