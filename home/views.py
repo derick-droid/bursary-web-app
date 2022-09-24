@@ -70,19 +70,15 @@ def home(request):
        
         if form.is_valid():
             name = form.cleaned_data["name"]
-            DATE_OF_BIRTH = form.cleaned_data[" DATE_OF_BIRTH"]
-            ID_NO_passport = form.cleaned_data["ID_NO_passpor"]
+            DATE_OF_BIRTH = form.cleaned_data["DATE_OF_BIRTH"]
+            ID_NO_passport = form.cleaned_data["ID_NO_passport"]
             print("name")
             print(" DATE_OF_BIRTH")
             print("ID_NO_passport")
     else:
      form = PersonalForm()
-     context = {
-        "form":form,  
-        }
-
     
-    return render(request, "home/home.html", context)
+    return render(request, "home/home.html", {'form': form})
 
 
 # polling form

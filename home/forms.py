@@ -7,6 +7,6 @@ class PersonalForm(forms.Form):
         ("male, Male"),
         ("female", "Female"),
         ("other", "Other"),)
-    DATE_OF_BIRTH = forms.TimeField(required = True, label="DATE OF BIRTH")
+    DATE_OF_BIRTH = forms.DateField(required = True, label="DATE OF BIRTH")
     ID_NO_passport = forms.IntegerField(required=True, label="ID.NO/PASSPORT")
     
