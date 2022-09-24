@@ -19,7 +19,11 @@
         {% csrf_token %}
         {{form}}
         <button type="submit">SUBMIT</button>
+        <div class="next">
+            
         </form>
+        <a class="next" href="{% url 'polling' %}">NEXT PAGE</a>
+           </div>
        
         <!-- <div class="containers">
             <div class="title">Please fill this form </div>
