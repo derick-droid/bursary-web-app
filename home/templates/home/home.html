@@ -16,14 +16,18 @@
             </ul>
         </p>
         <form action="" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
+            <fieldset>
+                <legend><b> PERSONAL INFORMATION</b></legend>
+                {% csrf_token %}
+                  {{form.as_p}}
         <button type="submit">SUBMIT</button>
         <div class="next">
             
         </form>
         <a class="next" href="{% url 'polling' %}">NEXT PAGE</a>
            </div>
+            </fieldset>
+        
        
         
 {% endblock content %}

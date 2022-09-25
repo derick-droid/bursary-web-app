@@ -31,7 +31,14 @@ class PersonalForm(forms.Form):
     phone_number = forms.IntegerField(required = True,label="PHONE NUMBER:",)
 
 
-
-
+class PollingForm(forms.Form):
+    ward =  forms.CharField(required=True, label="WARD", max_length=100)
+    location =  forms.CharField(required=True, label="LOCATION", max_length=100)
+    sub_location = forms.CharField(required=True, label="SUB LOCATION", max_length=100)
+    physical_address =  forms.IntegerField(required=True, label="PHYSICAL ADDRRESS")
+    permanent_address =  forms.IntegerField(required=True, label="PERMANENT ADDRESS")
+    institution_post_address =  forms.IntegerField(required=True, label="INSTITUTION’S POSTAL ADDRESS")
+    institution_tel_phone =  forms.IntegerField(required=True, label="INSTITUTION’S TELEPHONE NUMBER")
+    amount_applied = forms.IntegerField(required=True, label="AMOUNT APPLIED FOR (Kshs.)")
     
    

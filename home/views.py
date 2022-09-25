@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
-from .forms import PersonalForm
+from .forms import PersonalForm, PollingForm
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -107,7 +107,32 @@ def home(request):
 
 # polling form
 def polling(request):
-    return render(request, "home/polling.html")
+    
+    if request.method == "POST":
+        form = PollingForm(request.POST)
+        
+        if form.is_valid:
+            ward = form.cleaned_data["ward"]
+            location = form.cleaned_data["location"]
+            sub_location =  form.cleaned_data["sub_location"]
+            physical_address =  form.cleaned_data["physical_address"]
+            permanent_address =  form.cleaned_data["permanent_address"]
+            institution_post_address =  form.cleaned_data["institution_post_address"]
+            institution_tel_phone  = form.cleaned_data["institution_tel_phone"]
+            amount_applied = form.cleaned_data["amount_applied"]
+            print(physical_address)
+            print(permanent_address)
+            print(amount_applied)
+            print(institution_tel_phone)
+            print(institution_post_address)
+            print(location)
+            print(ward)
+            print(sub_location)
+            
+    else:
+        form = PollingForm()
+    
+    return render(request, "home/polling.html", {"form":form})
 
 # family form
 def family(request):

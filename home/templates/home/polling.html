@@ -4,12 +4,13 @@
             <!-- <div class="title">Please fill this form </div>
             <h3>PART A :TO BE FILLED BY THE APPLICANT / PARENT / GUARDIAN</h3> -->
         
-        <form action="#">
+        <form action="#" method="POST">
             <div class="user-details">
                 <fieldset>
                     <legend> <b>POLLING STATION</b> </legend>
-
-                <label>
+                      {% csrf_token %}
+                      {{form}}
+                <!-- <label>
                      <span class="details">WARD</span>
                 <input type="text"  placeholder="enter location"  required>
 
@@ -40,7 +41,7 @@
                <br>
                <p><b><strong>(Attach support documents including letter of admission, fees structure and recommendations)</strong></b></p>
                
-               <br>
+               <br> -->
                <button type="submit" value="Submit">SUBMIT</button>
 
                <div class="next">
