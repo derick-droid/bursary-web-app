@@ -12,15 +12,8 @@ MODE_OF_STUDY = [
     ("parallel", "Parallel"),
     ("day", "Day"),
 ]
-# FRUIT_CHOICES= [
-#     ('orange', 'Oranges'),
-#     ('cantaloupe', 'Cantaloupes'),
-#     ('mango', 'Mangoes'),
-#     ('honeydew', 'Honeydews'),
-#     ]
 
 class PersonalForm(forms.Form):
-    # gender= forms.CharField(label="Gender", widget=forms.RadioSelect(choices=Gender))
 
     name = forms.CharField(required = True,label="Full Names(as it appears id national ID)", max_length=100)
     gender = forms.CharField(required = True,label="Gender",widget=forms.RadioSelect(choices=Gender))
@@ -41,5 +34,4 @@ class PersonalForm(forms.Form):
 
 
     
-    # favorite_fruit= forms.CharField(label='What is your favorite fruit?', widget=forms.RadioSelect(choices=FRUIT_CHOICES))
    
