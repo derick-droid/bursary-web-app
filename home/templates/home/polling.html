@@ -9,7 +9,7 @@
                 <fieldset>
                     <legend> <b>POLLING STATION</b> </legend>
                       {% csrf_token %}
-                      {{form}}
+                      {{form.as_p}}
                 <!-- <label>
                      <span class="details">WARD</span>
                 <input type="text"  placeholder="enter location"  required>

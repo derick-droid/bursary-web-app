@@ -12,6 +12,20 @@ MODE_OF_STUDY = [
     ("parallel", "Parallel"),
     ("day", "Day"),
 ]
+FAMILY_STATUS = [
+    ("both parents are dead", "Both parents are dead"),
+    ("one parent is dead", "One parent is dead"),
+    ("both parents are a live", "Both parents are a live"),
+    ("single parent", "Single parent"),
+]
+TYPE_EMPLOYMENT = [
+    ("permanent ", "Permanent"),
+    ("casual", "Casual"),
+    ("contractual", "Contractual"),
+    ("retired", "Retired"),
+    ("self employed", "Self employed"),
+    ("none", "None"),
+]
 
 class PersonalForm(forms.Form):
 
@@ -41,4 +55,27 @@ class PollingForm(forms.Form):
     institution_tel_phone =  forms.IntegerField(required=True, label="INSTITUTION’S TELEPHONE NUMBER")
     amount_applied = forms.IntegerField(required=True, label="AMOUNT APPLIED FOR (Kshs.)")
     
-   
+class FamilyForm(forms.Form):
+    family_status = forms.CharField(required=True, label= "Kindly indicate your family status", widget=forms.RadioSelect(choices=FAMILY_STATUS))
+    other_states = forms.CharField(required=True, label="OTHERS(states)", max_length=100)
+    number_of_siblings= forms.IntegerField(required=True, label="Number of siblings ( alive)",)
+    estimated_income = forms.IntegerField(required=True,label="Estimated Family income(annually Kshs.)")
+    estimated_expenses = forms.IntegerField(required=True, label="Estimated Family expenses(annually Kshs.)")
+    # father deatils
+    father_full_name = forms.CharField(label="FATHER- Full Name", max_length=100)
+    father_address = forms.IntegerField(label="FATHER- ADDRESS")
+    f_phone_number =  forms.IntegerField(label="FATHER-TELEPHONE NUMBER")
+    father_employment =  forms.CharField(label="FATHER- Type of employment (Tick appropriately)", widget=forms.RadioSelect(choices=TYPE_EMPLOYMENT))
+    father_income = forms.CharField(label="FATHER - MAIN SOURCE OF INCOME", max_length=100)
+    # mother details
+    mother_full_name = forms.CharField(label="MOTHER- Full Name", max_length=100)
+    mother_address = forms.IntegerField(label="MOTHER- ADDRESS")
+    m_phone_number =  forms.IntegerField(label="MOTHER-TELEPHONE NUMBER")
+    mother_employment =  forms.CharField(label="MOTHER- Type of employment (Tick appropriately)", widget=forms.RadioSelect(choices=TYPE_EMPLOYMENT))
+    mother_income = forms.CharField(label="MOTHER- MAIN SOURCE OF INCOME",max_length=100)
+    # guradian details
+    guardian_full_name = forms.CharField(label="GUARDIAN- Full Name", max_length=100)
+    guardian_address = forms.IntegerField(label="GUARDIAN- ADDRESS")
+    g_phone_number =  forms.IntegerField(label="GUARDIAN-TELEPHONE NUMBER")
+    guardian_employment =  forms.CharField(label="GUARDIAN- Type of employment (Tick appropriately)", widget=forms.RadioSelect(choices=TYPE_EMPLOYMENT))
+    guardian_income = forms.CharField(label="GUARDIAN- MAIN SOURCE OF INCOME", max_length=100)

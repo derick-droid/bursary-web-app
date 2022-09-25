@@ -6,22 +6,17 @@
             <!-- <div class="title">Please fill this form </div>
             <h3>PART A :TO BE FILLED BY THE APPLICANT / PARENT / GUARDIAN</h3> -->
         
-        <form action="#">
+        <form action="" method="POST">
             <div class="user-details">
                 <fieldset>
                     <legend> <b>FAMILY BACKGROUND ( Tick appropriately)</b> </legend>
-<!-- 
-                <label>
-                     <span class="details">FULL NAMES(as it appear in the ID/official documents)</span>
-                <input type="text"  placeholder="enter your full names"  required>
-
-                </label> -->
-               
-               <p>
+               <!-- <p>
                 Kindly indicate your family status
-               </p>
+               </p> -->
+               {% csrf_token %}
+               {{form}}
                
-               <input type="radio", name="status" value="dead" checked/>Both Parents Dead
+               <!-- <input type="radio", name="status" value="dead" checked/>Both Parents Dead
                <input type="radio", name="status" value="one" checked/>One Parent Dead
                <input type="radio", name="status" value="both" checked/>Both Parents Alive
                <input type="radio", name="status" value="single" checked/>Single parent            
@@ -40,10 +35,10 @@
                <br>
                <span class="details">Estimated Family expenses(annually Kshs.)</span>
                <input type="text"  placeholder="family expenses" required>
-               <br>
+               <br> -->
                <p><b><strong>(Attach support documents eg- death certificate / a verification letter from area chief/sub chief)</strong></b></p>
 
-                <p><b><strong>Father</strong></b></p>
+                <!-- <p><b><strong>Father</strong></b></p>
                <span class="details">Full Name</span>
                <input type="text"  placeholder="full name" required>
                <span class="details">Address</span>
@@ -66,9 +61,33 @@
                <br>
                <span class="details">MAIN SOURCE OF INCOME</span>
                <input type="text"  placeholder="income"  required>
-              <br>
+              <br> -->
 
-              <p><b><strong>Mother</strong></b></p>
+              <!-- <p><b><strong>Mother</strong></b></p> -->
+              <!-- <span class="details">Full Name</span>
+              <input type="text"  placeholder="full name" required>
+              <span class="details">Address</span>
+              <input type="text"  placeholder="address"  required>
+
+              <br>
+              <span class="details">Telephone Number</span>
+              <input type="text"  placeholder="Telephone number" required>
+
+              <p>
+               Type of employment (Tick appropriately)
+              </p>
+              <input type="radio", name="study" value="Permanent" checked/>Permanent
+              <input type="radio", name="study" value="Contractual" checked/>Contractual
+              <input type="radio", name="study" value="Casual" checked/>Casual
+              <input type="radio", name="study" value="Retired" checked/>Retired
+              <input type="radio", name="study" value="Self employed" checked/>Self employed
+              <input type="radio", name="study" value="None" checked/>None
+
+              <br>
+              <span class="details">MAIN SOURCE OF INCOME</span>
+              <input type="text"  placeholder="income"  required>
+              -->
+              <!-- <p><b><strong>Guardian</strong></b></p>
               <span class="details">Full Name</span>
               <input type="text"  placeholder="full name" required>
               <span class="details">Address</span>
@@ -91,31 +110,7 @@
               <br>
               <span class="details">MAIN SOURCE OF INCOME</span>
               <input type="text"  placeholder="income"  required>
-             
-              <p><b><strong>Guardian</strong></b></p>
-              <span class="details">Full Name</span>
-              <input type="text"  placeholder="full name" required>
-              <span class="details">Address</span>
-              <input type="text"  placeholder="address"  required>
-
-              <br>
-              <span class="details">Telephone Number</span>
-              <input type="text"  placeholder="Telephone number" required>
-
-              <p>
-               Type of employment (Tick appropriately)
-              </p>
-              <input type="radio", name="study" value="Permanent" checked/>Permanent
-              <input type="radio", name="study" value="Contractual" checked/>Contractual
-              <input type="radio", name="study" value="Casual" checked/>Casual
-              <input type="radio", name="study" value="Retired" checked/>Retired
-              <input type="radio", name="study" value="Self employed" checked/>Self employed
-              <input type="radio", name="study" value="None" checked/>None
-
-              <br>
-              <span class="details">MAIN SOURCE OF INCOME</span>
-              <input type="text"  placeholder="income"  required>
-             
+              -->
                   
 
                <br>

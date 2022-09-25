@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
-from .forms import PersonalForm, PollingForm
+from .forms import PersonalForm, PollingForm, FamilyForm
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -134,7 +134,58 @@ def polling(request):
 
 # family form
 def family(request):
-    return render(request, "home/family.html")
+    if request.method =="POST":
+        form = FamilyForm(request.POST)
+        if form.is_valid():
+            family_status = form.cleaned_data["family_status"]
+            other_states =  form.cleaned_data["other_states"]
+            number_of_siblings =  form.cleaned_data["number_of_siblings"]
+            estimated_income =  form.cleaned_data["estimated_income"]
+            estimated_expenses =  form.cleaned_data["estimated_expenses"]
+            # father details
+            father_full_name =  form.cleaned_data["father_full_name"]
+            father_address = form.cleaned_data["father_address"]
+            f_phone_number =  form.cleaned_data["f_phone_number"]
+            father_employment = form.cleaned_data["father_employment"]
+            father_income  = form.cleaned_data["father_income"]
+            # mother details
+            mother_full_name =  form.cleaned_data["mother_full_name"]
+            mother_address = form.cleaned_data["mother_address"]
+            m_phone_number =  form.cleaned_data["m_phone_number"]
+            mother_employment = form.cleaned_data["mother_employment"]
+            mother_income  = form.cleaned_data["mother_income"]
+            # GUARDIAN details
+            guardian_full_name =  form.cleaned_data["guardian_full_name"]
+            guardian_address = form.cleaned_data["guardian_address"]
+            g_phone_number =  form.cleaned_data["g_phone_number"]
+            guardian_employment = form.cleaned_data["guardian_employment"]
+            guardian_income  = form.cleaned_data["guardian_income"]
+            print(father_full_name)
+            print(family_status)
+            print(other_states)
+            print(number_of_siblings)
+            print( estimated_income)
+            print(estimated_expenses)
+            print(father_address)
+            print(f_phone_number)
+            print(father_employment)
+            print(father_income)
+            print(mother_full_name)
+            print(mother_address)
+            print(m_phone_number)
+            print(mother_employment)
+            print(mother_income)
+            print(guardian_full_name)
+            print(mother_address)
+            print(g_phone_number)
+            print(guardian_employment)
+            print(guardian_income)
+
+
+            
+    else:
+        form = FamilyForm()      
+    return render(request, "home/family.html", {"form":form})
 
 def logout(request):
     logout(request)
