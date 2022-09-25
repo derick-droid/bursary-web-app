@@ -105,13 +105,11 @@ def home(request):
     return render(request, "home/home.html", {'form': form})
 
 
-# polling form
+# polling station  form
 def polling(request):
-    
     if request.method == "POST":
         form = PollingForm(request.POST)
-        
-        if form.is_valid:
+        if form.is_valid():
             ward = form.cleaned_data["ward"]
             location = form.cleaned_data["location"]
             sub_location =  form.cleaned_data["sub_location"]
