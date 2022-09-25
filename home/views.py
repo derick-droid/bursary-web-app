@@ -73,12 +73,32 @@ def home(request):
             DATE_OF_BIRTH = form.cleaned_data["DATE_OF_BIRTH"]
             ID_NO_passport = form.cleaned_data["ID_NO_passport"]
             gender = form.cleaned_data["gender"]
+            school = form.cleaned_data["school"]
+            admission_number = form.cleaned_data["admission_number"]
+            campus_branch = form.cleaned_data["campus_branch"] 
+            faculty_branch = form.cleaned_data["faculty_branch"]
+            course_study = form.cleaned_data["course_study"]
+            mode_study =  form.cleaned_data["mode_study"]
+            class_year = form.cleaned_data["class_year"]
+            course_duration =  form.cleaned_data["course_duration"]
+            year_completion = form.cleaned_data["year_completion"]
+            phone_number  = form.cleaned_data["phone_number"]
             # favorite_fruit = form.cleaned_data["favorite_fruit"]
             print(name)
             print(DATE_OF_BIRTH)
             print(ID_NO_passport)
             print(gender)
             # print(favorite_fruit)
+            print(school)
+            print(admission_number)
+            print(campus_branch)
+            print(faculty_branch)
+            print(course_study)
+            print(mode_study)
+            print(class_year)
+            print(course_duration)
+            print(year_completion)
+            print(phone_number )
     else:
      form = PersonalForm()
     
