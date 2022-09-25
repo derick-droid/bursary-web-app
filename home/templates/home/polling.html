@@ -1,47 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
         <div class="containers">
-            <!-- <div class="title">Please fill this form </div>
-            <h3>PART A :TO BE FILLED BY THE APPLICANT / PARENT / GUARDIAN</h3> -->
-        
         <form action="#" method="POST">
             <div class="user-details">
                 <fieldset>
                     <legend> <b>POLLING STATION</b> </legend>
                       {% csrf_token %}
                       {{form.as_p}}
-                <!-- <label>
-                     <span class="details">WARD</span>
-                <input type="text"  placeholder="enter location"  required>
-
-               <span class="details">LOCATION</span>
-               <input type="text"  placeholder="ward"  required>
-               <span class="details">SUB LOCATION</span>
-               <input type="text"  placeholder="sub location"  required>
-
-               <br>
-               <span class="details">PHYSICAL ADDRESS</span>
-               <input type="text"  placeholder="physical address"  required>
-
-               <br>
-               <span class="details">PERMANENT ADDRESS</span>
-               <input type="text"  placeholder="permanent address" required>
-
-               <br>
-               <span class="details">INSTITUTION’S POSTAL ADDRESS</span>
-               <input type="text"  placeholder="institutional postal address"  required>
-
-               <br>
-               <span class="details">INSTITUTION’S TELEPHONE NUMBER</span>
-               <input type="text"  placeholder="institutional telephone number"  required>
-
-               <br>
-               <span class="details">AMOUNT APPLIED FOR (Kshs.)</span>
-               <input type="text"  placeholder="amount"  required>
-               <br>
-               <p><b><strong>(Attach support documents including letter of admission, fees structure and recommendations)</strong></b></p>
-               
-               <br> -->
                <button type="submit" value="Submit">SUBMIT</button>
 
                <div class="next">
