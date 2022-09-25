@@ -72,9 +72,13 @@ def home(request):
             name = form.cleaned_data["name"]
             DATE_OF_BIRTH = form.cleaned_data["DATE_OF_BIRTH"]
             ID_NO_passport = form.cleaned_data["ID_NO_passport"]
+            gender = form.cleaned_data["gender"]
+            # favorite_fruit = form.cleaned_data["favorite_fruit"]
             print(name)
             print(DATE_OF_BIRTH)
             print(ID_NO_passport)
+            print(gender)
+            # print(favorite_fruit)
     else:
      form = PersonalForm()
     
