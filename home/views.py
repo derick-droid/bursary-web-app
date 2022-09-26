@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from unicodedata import name
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
@@ -180,11 +181,12 @@ def family(request):
             print(g_phone_number)
             print(guardian_employment)
             print(guardian_income)
-
+        
 
             
     else:
-        form = FamilyForm()      
+        form = FamilyForm() 
+            
     return render(request, "home/family.html", {"form":form})
 
 def logout(request):
