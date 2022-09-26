@@ -84,22 +84,21 @@ def home(request):
             course_duration =  form.cleaned_data["course_duration"]
             year_completion = form.cleaned_data["year_completion"]
             phone_number  = form.cleaned_data["phone_number"]
-            # favorite_fruit = form.cleaned_data["favorite_fruit"]
-            print(name)
-            print(DATE_OF_BIRTH)
-            print(ID_NO_passport)
-            print(gender)
-            # print(favorite_fruit)
-            print(school)
-            print(admission_number)
-            print(campus_branch)
-            print(faculty_branch)
-            print(course_study)
-            print(mode_study)
-            print(class_year)
-            print(course_duration)
-            print(year_completion)
-            print(phone_number )
+            # print(name)
+            # print(DATE_OF_BIRTH)
+            # print(ID_NO_passport)
+            # print(gender)
+            # print(school)
+            # print(admission_number)
+            # print(campus_branch)
+            # print(faculty_branch)
+            # print(course_study)
+            # print(mode_study)
+            # print(class_year)
+            # print(course_duration)
+            # print(year_completion)
+            # print(phone_number )
+            
     else:
      form = PersonalForm()
     
@@ -119,14 +118,15 @@ def polling(request):
             institution_post_address =  form.cleaned_data["institution_post_address"]
             institution_tel_phone  = form.cleaned_data["institution_tel_phone"]
             amount_applied = form.cleaned_data["amount_applied"]
-            print(physical_address)
-            print(permanent_address)
-            print(amount_applied)
-            print(institution_tel_phone)
-            print(institution_post_address)
-            print(location)
-            print(ward)
-            print(sub_location)
+            # print(physical_address)
+            # print(permanent_address)
+            # print(amount_applied)
+            # print(institution_tel_phone)
+            # print(institution_post_address)
+            # print(location)
+            # print(ward)
+            # print(sub_location)
+            
             
     else:
         form = PollingForm()
@@ -161,26 +161,27 @@ def family(request):
             g_phone_number =  form.cleaned_data["g_phone_number"]
             guardian_employment = form.cleaned_data["guardian_employment"]
             guardian_income  = form.cleaned_data["guardian_income"]
-            print(father_full_name)
-            print(family_status)
-            print(other_states)
-            print(number_of_siblings)
-            print( estimated_income)
-            print(estimated_expenses)
-            print(father_address)
-            print(f_phone_number)
-            print(father_employment)
-            print(father_income)
-            print(mother_full_name)
-            print(mother_address)
-            print(m_phone_number)
-            print(mother_employment)
-            print(mother_income)
-            print(guardian_full_name)
-            print(mother_address)
-            print(g_phone_number)
-            print(guardian_employment)
-            print(guardian_income)
+            # print(father_full_name)
+            # print(family_status)
+            # print(other_states)
+            # print(number_of_siblings)
+            # print( estimated_income)
+            # print(estimated_expenses)
+            # print(father_address)
+            # print(f_phone_number)
+            # print(father_employment)
+            # print(father_income)
+            # print(mother_full_name)
+            # print(mother_address)
+            # print(m_phone_number)
+            # print(mother_employment)
+            # print(mother_income)
+            # print(guardian_full_name)
+            # print(mother_address)
+            # print(g_phone_number)
+            # print(guardian_employment)
+            # print(guardian_income)
+            
         
 
             
