@@ -9,7 +9,7 @@
                 <fieldset>
                     <legend> <b>FAMILY BACKGROUND ( Tick appropriately)</b> </legend>
                {% csrf_token %}
-               {{form}}
+               {{form.as_p}}
                <br>
                <button type="submit" value="Submit">SUBMIT</button>
                <br>
