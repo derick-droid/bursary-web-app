@@ -70,7 +70,7 @@ class PollingForm(ModelForm):
     
 class FamilyForm(ModelForm):
     family_status = forms.CharField(required=True, label= "Kindly indicate your family status", widget=forms.RadioSelect(choices=FAMILY_STATUS))
-    other_states = forms.CharField(required=True, label="OTHERS(states)", max_length=100)
+    other_states = forms.CharField(label="OTHERS(states)", max_length=100)
     number_of_siblings= forms.IntegerField(required=True, label="Number of siblings ( alive)",)
     estimated_income = forms.IntegerField(required=True,label="Estimated Family income(annually Kshs.)")
     estimated_expenses = forms.IntegerField(required=True, label="Estimated Family expenses(annually Kshs.)")

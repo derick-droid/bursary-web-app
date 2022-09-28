@@ -104,7 +104,7 @@ def polling(request):
             institution_post_address =  form.cleaned_data["institution_post_address"]
             institution_tel_phone  = form.cleaned_data["institution_tel_phone"]
             amount_applied = form.cleaned_data["amount_applied"]
-           
+            form.save()
             
     else:
         form = PollingForm()
@@ -139,6 +139,7 @@ def family(request):
             g_phone_number =  form.cleaned_data["g_phone_number"]
             guardian_employment = form.cleaned_data["guardian_employment"]
             guardian_income  = form.cleaned_data["guardian_income"]
+            form.save()
             return HttpResponse("THANKS FOR YOUR COOPERATION. REMEMBER ANY FALSE INFROMATION CAN RESULT INTO FAULURE TO FUNDS ALLOCATION")
     else:
         form = FamilyForm() 
