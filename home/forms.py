@@ -1,5 +1,6 @@
 
 from dataclasses import field
+from pyexpat import model
 from django import forms
 from .models import Personal,Polling,Family
 from django.forms import ModelForm
@@ -30,7 +31,7 @@ TYPE_EMPLOYMENT = [
     ("none", "None"),
 ]
 
-class PersonalForm(forms.Form):
+class PersonalForm(ModelForm):
 
     name = forms.CharField(required = True,label="Full Names(as it appears id national ID)", max_length=100)
     gender = forms.CharField(required = True,label="Gender",widget=forms.RadioSelect(choices=Gender))
@@ -49,10 +50,10 @@ class PersonalForm(forms.Form):
     
     class Meta:
         model = Personal
-        field = "__all__"
+        fields = "__all__"
 
 
-class PollingForm(forms.Form):
+class PollingForm(ModelForm):
     ward =  forms.CharField(required=True, label="WARD", max_length=100)
     location =  forms.CharField(required=True, label="LOCATION", max_length=100)
     sub_location = forms.CharField(required=True, label="SUB LOCATION", max_length=100)
@@ -62,7 +63,12 @@ class PollingForm(forms.Form):
     institution_tel_phone =  forms.IntegerField(required=True, label="INSTITUTION’S TELEPHONE NUMBER")
     amount_applied = forms.IntegerField(required=True, label="AMOUNT APPLIED FOR (Kshs.)")
     
-class FamilyForm(forms.Form):
+    class Meta:
+        model = Polling
+        fields = "__all__"
+    
+    
+class FamilyForm(ModelForm):
     family_status = forms.CharField(required=True, label= "Kindly indicate your family status", widget=forms.RadioSelect(choices=FAMILY_STATUS))
     other_states = forms.CharField(required=True, label="OTHERS(states)", max_length=100)
     number_of_siblings= forms.IntegerField(required=True, label="Number of siblings ( alive)",)
@@ -86,3 +92,7 @@ class FamilyForm(forms.Form):
     g_phone_number =  forms.IntegerField(label="GUARDIAN-TELEPHONE NUMBER")
     guardian_employment =  forms.CharField(label="GUARDIAN- Type of employment (Tick appropriately)", widget=forms.RadioSelect(choices=TYPE_EMPLOYMENT))
     guardian_income = forms.CharField(label="GUARDIAN- MAIN SOURCE OF INCOME", max_length=100)
+    
+    class Meta:
+        model = Family
+        fields = "__all__"
