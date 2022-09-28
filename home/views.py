@@ -1,3 +1,4 @@
+from multiprocessing import context
 from unicodedata import name
 from django.shortcuts import render,redirect, HttpResponse
 from django.contrib.auth.models import User,auth
@@ -67,7 +68,7 @@ def login_auth(request):
 def home(request):   
     if request.method == "POST":
         form  = PersonalForm(request.POST)
-       
+   
         if form.is_valid():
             name = form.cleaned_data["name"]
             DATE_OF_BIRTH = form.cleaned_data["DATE_OF_BIRTH"]
@@ -87,14 +88,15 @@ def home(request):
             
     else:
      form = PersonalForm()
-    
-    return render(request, "home/home.html", {'form': form})
+    context = {"form":form}
+    return render(request, "home/home.html", context)
 
 
 # polling station  form
 def polling(request):
     if request.method == "POST":
         form = PollingForm(request.POST)
+        
         if form.is_valid():
             ward = form.cleaned_data["ward"]
             location = form.cleaned_data["location"]
@@ -109,12 +111,17 @@ def polling(request):
     else:
         form = PollingForm()
     
-    return render(request, "home/polling.html", {"form":form})
+    context = {
+        "form":form,
+        }
+
+    return render(request, "home/polling.html", context)
 
 # family form
 def family(request):
     if request.method =="POST":
         form = FamilyForm(request.POST)
+        
         if form.is_valid():
             family_status = form.cleaned_data["family_status"]
             other_states =  form.cleaned_data["other_states"]
@@ -143,8 +150,12 @@ def family(request):
             return HttpResponse("THANKS FOR YOUR COOPERATION. REMEMBER ANY FALSE INFROMATION CAN RESULT INTO FAULURE TO FUNDS ALLOCATION")
     else:
         form = FamilyForm() 
-            
-    return render(request, "home/family.html", {"form":form})
+        
+    context = {
+        "form":form,
+    }    
+       
+    return render(request, "home/family.html", context)
 
 def logout(request):
     logout(request)
