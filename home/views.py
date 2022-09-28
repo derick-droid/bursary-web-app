@@ -1,6 +1,5 @@
-from http.client import HTTPResponse
 from unicodedata import name
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, HttpResponse
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
@@ -84,7 +83,7 @@ def home(request):
             course_duration =  form.cleaned_data["course_duration"]
             year_completion = form.cleaned_data["year_completion"]
             phone_number  = form.cleaned_data["phone_number"]
-            
+            form.save()
             
     else:
      form = PersonalForm()
@@ -140,7 +139,7 @@ def family(request):
             g_phone_number =  form.cleaned_data["g_phone_number"]
             guardian_employment = form.cleaned_data["guardian_employment"]
             guardian_income  = form.cleaned_data["guardian_income"]
-            
+            return HttpResponse("THANKS FOR YOUR COOPERATION. REMEMBER ANY FALSE INFROMATION CAN RESULT INTO FAULURE TO FUNDS ALLOCATION")
     else:
         form = FamilyForm() 
             

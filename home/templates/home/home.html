@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if user.is_authenticated %}
     <div class="app">
         <p>
             <b>INSTRUCTIONS</b>
@@ -27,6 +28,8 @@
         <a class="next" href="{% url 'polling' %}">NEXT PAGE</a>
            </div>
             </fieldset>
+            
+            {% endif %}
         
        
         

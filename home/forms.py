@@ -1,5 +1,8 @@
 
+from dataclasses import field
 from django import forms
+from .models import Personal,Polling,Family
+from django.forms import ModelForm
 Gender= [
     ("male", "Male"),
     ("female", "Female"),
@@ -43,6 +46,10 @@ class PersonalForm(forms.Form):
     course_duration = forms.IntegerField(required = True,label="COURSE DURATION(year/s)",)
     year_completion = forms.IntegerField(required = True,label="EXPECTED YEAR AND MONTH OF COMPLETION(mm/yy)",)
     phone_number = forms.IntegerField(required = True,label="PHONE NUMBER:",)
+    
+    class Meta:
+        model = Personal
+        field = "__all__"
 
 
 class PollingForm(forms.Form):
