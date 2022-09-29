@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if user.is_authenticated %}
         <div class="containers">
         <form action="#" method="POST">
             <div class="user-details">
@@ -18,6 +19,14 @@
             </fieldset>
 
         </form>
+        {% else %}
+        <p>
+            <b>PLEASE LOGIN FIRST OR CREATE AN ACCOUNT ID NEW USER:</b>
+            <br>
+            <a href="{% url 'login' %}">LOGIN</a> OR <a href="{% url 'sign' %}">REGISTER</a>
+        </p>
+
+        {% endif %}
     </div>
 </div>
 </div>

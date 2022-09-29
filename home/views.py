@@ -35,10 +35,10 @@ def sign(request):
          my_user = User.objects.create_user(username, email,password)
          my_user.save()
          
-        #  messages.success(request, "Account created successfully ")
+         messages.success(request, "Account created successfully ")
          return redirect("home")
      
-        #  messages.error(request, "An error occurred while creating the account ")
+    messages.error(request, "An error occurred while creating the account ")
         
 
     return render(request, "home/sign.html")
@@ -54,10 +54,10 @@ def login_auth(request):
         
         if user is not None:
             login(request, user)
-            # messages.success(request, "You are logged in successfully")
+            messages.success(request, "You are logged in successfully")
             return redirect("home")
         else:
-            # messages.error(request, "Error in loggin in")
+            messages.error(request, "Error in loggin in")
             return redirect( "login")
     # else:
     #     return render(request, "home/login.html")

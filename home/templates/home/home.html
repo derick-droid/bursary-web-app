@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% if user.is_authenticated %}
     <div class="app">
         <p>
             <b>INSTRUCTIONS</b>
@@ -28,7 +28,13 @@
         <a class="next" href="{% url 'polling' %}">NEXT PAGE</a>
            </div>
             </fieldset>
-       
+            {% else %}
+            <p>
+                <b>PLEASE LOGIN FIRST OR CREATE AN ACCOUNT ID NEW USER:</b>
+                <br>
+                <a href="{% url 'login' %}">LOGIN</a> OR <a href="{% url 'sign' %}">REGISTER</a>
+            </p>
+       {% endif %}
 {% endblock content %}
 </body>
 </html>
