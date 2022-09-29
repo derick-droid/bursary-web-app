@@ -3,7 +3,7 @@ from unicodedata import name
 from django.shortcuts import render,redirect, HttpResponse
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from .forms import PersonalForm, PollingForm, FamilyForm
 from django.contrib.auth.forms import UserCreationForm
 
@@ -35,7 +35,7 @@ def sign(request):
          my_user = User.objects.create_user(username, email,password)
          my_user.save()
          
-         messages.success(request, "Account created successfully ")
+        #  messages.success(request, "Account created successfully ")
          return redirect("home")
      
         #  messages.error(request, "An error occurred while creating the account ")
@@ -59,8 +59,8 @@ def login_auth(request):
         else:
             # messages.error(request, "Error in loggin in")
             return redirect( "login")
-    else:
-        return render(request, "home/login.html")
+    # else:
+    #     return render(request, "home/login.html")
     
     return render(request, "home/login.html")
 
@@ -157,6 +157,7 @@ def family(request):
        
     return render(request, "home/family.html", context)
 
-def logout(request):
+def logout_auth(request):
     logout(request)
-    return redirect("login")
+    messages.success(request, "Logged Out Successfully!!")
+    return redirect("home")
