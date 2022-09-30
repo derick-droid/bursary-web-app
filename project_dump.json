@@ -1,0 +1,87 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$390000$fNGvAjTmutYXnoHBvPAdW1$2bXOwjfCpKSSMd1O6Bi5d0vYTL4Ef+FJv72Md+1b6zE=",
+        "last_login": "2022-09-30T08:30:31.755Z",
+        "is_superuser": false,
+        "username": "john",
+        "first_name": "",
+        "last_name": "",
+        "email": "john@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-09-29T11:00:00.189Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "veo6uuo3yupxkyt401dvo3ykjuh3gzcd",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGln-xg4lPWewNrtrHEC2FCcV4u4QKQW0b2beSyTY1pK2zkuaSZyFFqffbQJ8cN0B3aHemsRW12We5K7Ig3Z5bcTPy-H-HRTo5VsHNRjAgUejPfhIlFlFdJgt5hytsppdsAEdk9IQvdNBeRPQYB5t9CDeH-OcN6E:1oeBPj:9x-Ws_fn94TBKhQ6Bj0rniVb91ax_V_-5uj3F-eg1fw",
+        "expire_date": "2022-10-14T08:30:31.841Z"
+    }
+},
+{
+    "model": "home.personal",
+    "pk": 1,
+    "fields": {
+        "name": "george kahuria",
+        "gender": "male",
+        "DATE_OF_BIRTH": "2000-05-23",
+        "ID_NO_passport": 98353437,
+        "school": "gretsa university",
+        "admission_number": "ICT-G-4-0579-18",
+        "campus_branch": "Thika branch",
+        "faculty_branch": "computing",
+        "course_study": "computer science",
+        "mode_study": "boarding",
+        "class_year": 4,
+        "course_duration": 3,
+        "year_completion": 3,
+        "phone_number": 797887654
+    }
+},
+{
+    "model": "home.polling",
+    "pk": 1,
+    "fields": {
+        "ward": "muhuru bay",
+        "location": "west",
+        "sub_location": "nyancha",
+        "physical_address": 8873633,
+        "permanent_address": 35353663,
+        "institution_post_address": 34342637,
+        "institution_tel_phone": 363534256,
+        "amount_applied": 353535
+    }
+},
+{
+    "model": "home.family",
+    "pk": 1,
+    "fields": {
+        "family_status": "one parent is dead",
+        "other_states": "pooer",
+        "number_of_siblings": 4,
+        "estimated_income": 3435,
+        "estimated_expenses": 43434,
+        "father_full_name": "james mangira",
+        "father_address": 3535,
+        "f_phone_number": 3434,
+        "father_employment": "casual",
+        "father_income": "Farming",
+        "mother_full_name": "beatrice auma",
+        "mother_address": 3333,
+        "m_phone_number": 542435,
+        "mother_employment": "contractual",
+        "mother_income": "farming",
+        "guardian_full_name": "guka",
+        "guardian_address": 242432,
+        "g_phone_number": 662534356,
+        "guardian_employment": "contractual",
+        "guardian_income": "fishing"
+    }
+}
+]
