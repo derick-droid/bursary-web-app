@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
-import dj_database_url
+import django_heroku
+# import dj_database_url
 from pathlib import Path
+
+import django
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*v5tp51k&u-*uqe*d-yj)b=sw_st3oaro*x0#81!o-s)7j3lhh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bursary.herokuapp.com']
 
 
 # Application definition
@@ -50,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.White',
 ]
 
 ROOT_URLCONF = 'bursary.urls'
@@ -83,17 +87,17 @@ WSGI_APPLICATION = 'bursary.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'bursary', 
-#         'USER': 'postgres', 
-#         'PASSWORD': 'derrickokinda9@go',
-#         'HOST': '127.0.0.1', 
-#         'PORT': '5432',
-#     }
-# }
-DATABASE = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/bursary')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbu4hmgai1jhfe', 
+        'USER': 'vqnshijxyvaqof', 
+        'PASSWORD': 'fd32c07da304bdb12aeb02035bfbdff6696a01c9ee53a7fbd86a95ee722b7812',
+        'HOST': 'ec2-3-217-251-77.compute-1.amazonaws.com', 
+        'PORT': '5432',
+    }
+}
+# DATABASE = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/bursary')}
 
 
 
@@ -131,10 +135,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ] 
+
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_URL = 'static/'
+django_heroku.settings(locals())
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/build/static'), )
 # MEDIA_URL = 'images/'
 
@@ -146,4 +154,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # whitenoise settings
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
