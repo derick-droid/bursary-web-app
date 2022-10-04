@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-*v5tp51k&u-*uqe*d-yj)b=sw_st3oaro*x0#81!o-s)7j3lhh
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.buraryapp.co']
+ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
 
 
 # Application definition
