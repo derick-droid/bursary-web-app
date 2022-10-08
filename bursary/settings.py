@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-*v5tp51k&u-*uqe*d-yj)b=sw_st3oaro*x0#81!o-s)7j3lhh
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
 # ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
 
 
@@ -76,7 +76,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bursary.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -145,7 +144,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = 'static/'
 # django_heroku.settings(locals())
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/build/static'), )
-# MEDIA_URL = 'images/'
+MEDIA_URL = 'images/'
 
 
 # Default primary key field type
