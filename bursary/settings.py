@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 # import django_heroku
-import dj_database_url
+# import dj_database_url
 from pathlib import Path
 
 import django
@@ -86,17 +86,17 @@ WSGI_APPLICATION = 'bursary.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'dbu4hmgai1jhfe', 
-#         'USER': 'vqnshijxyvaqof', 
-#         'PASSWORD': 'fd32c07da304bdb12aeb02035bfbdff6696a01c9ee53a7fbd86a95ee722b7812',
-#         'HOST': 'ec2-3-217-251-77.compute-1.amazonaws.com', 
-#         'PORT': '5432',
-#     }
-# }
-DATABASE = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/bursary')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbu4hmgai1jhfe', 
+        'USER': 'vqnshijxyvaqof', 
+        'PASSWORD': 'fd32c07da304bdb12aeb02035bfbdff6696a01c9ee53a7fbd86a95ee722b7812',
+        'HOST': 'ec2-3-217-251-77.compute-1.amazonaws.com', 
+        'PORT': '5432',
+    }
+}
+# DATABASE = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/bursary')}
 
 
 
@@ -144,7 +144,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = 'static/'
 # django_heroku.settings(locals())
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/build/static'), )
-MEDIA_URL = 'images/'
+# MEDIA_URL = 'images/'
 
 
 # Default primary key field type
@@ -154,4 +154,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # whitenoise settings
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
