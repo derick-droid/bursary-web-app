@@ -1,0 +1,129 @@
+body{
+   
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    background: linear-gradient(135deg,#71b7e6,#9b51b6);
+    padding: 10px;
+}
+h1{
+    text-align: center;
+}
+nav .logo{
+    padding: 10px 10px;
+    height: 80px;
+    float: left;
+    align-items: top;
+
+}
+nav ul{
+    list-style: none;
+    background-color:blue;
+    padding: 5px;
+    margin: 15px 0;
+    text-align:center;
+}
+nav li{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+
+}
+nav a{
+    text-decoration: none;
+    color: bisque;
+    display: block;
+    padding: 25px 20px;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align: center;
+}
+nav a:hover{
+    background-color: black;
+}
+
+
+ .email input{
+    width: 20%;
+    height: 50%;
+    padding: 15px 10px;
+    
+}
+
+.password input{
+    width: 20%;
+    padding: 15px 10px;
+    height: 20%;
+    
+}
+.name input{
+    width: 20%;
+    padding: 15px 10px;
+}
+form input{
+    font-size: large;
+    font-weight: bold;
+    
+}
+.login {
+    text-align: center;
+}
+.login h2{
+    font-weight: 900;
+}
+.login h3{
+    font-weight: 50;
+    
+
+}
+
+/* sign up */
+
+.sign{
+    text-align: center;
+}
+.form{
+text-align: center;
+}
+.title
+{
+    font-size: large;
+}
+
+
+.next{
+    align-content: center;
+}
+.containers
+{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 300px;
+    border-radius: 5px;
+   
+}
+.containers .title{
+    font-size: 25px;
+    font-weight: 300;
+    position: relative;
+}
+.app{
+    margin: auto;
+    background: #fff;
+    /* display: inline-flex; */
+}
+
+/* .containers .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg,#71b7e6,#9b51b6);
+    align-items: center;
+} */
+
