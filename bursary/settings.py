@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
-# import django_heroku
+import django_heroku
 import dj_database_url
 from pathlib import Path
 
@@ -74,6 +74,7 @@ TEMPLATES = [
         },
     },
 ]
+# WSGI_APPLICATION = 'wsgi.bursary'
 
 WSGI_APPLICATION = 'bursary.wsgi.application'
 
@@ -157,3 +158,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # whitenoise settings
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
