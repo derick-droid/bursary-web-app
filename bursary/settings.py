@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.White',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'bursary.urls'
@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'bursary.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-DATABASE = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/bursary')}
+DATABASES = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/bursary')}
 
 
 
