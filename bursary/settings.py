@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*v5tp51k&u-*uqe*d-yj)b=sw_st3oaro*x0#81!o-s)7j3lhh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =  False
 ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
 # ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
