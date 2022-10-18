@@ -102,17 +102,17 @@ WSGI_APPLICATION = 'bursary.wsgi.application'
 #     'PORT':'5432', } }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bursary', 
-        'USER': 'postgres', 
-        'PASSWORD': 'derrickokinda9@go',
-        'HOST': 'localhost', 
-        'PORT': '5432',
-    }
-}
-DATABASES = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/bursary')}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'bursary', 
+#         'USER': 'postgres', 
+#         'PASSWORD': 'derrickokinda9@go',
+#         'HOST': 'localhost', 
+#         'PORT': '5432',
+#     }
+# }
+DATABASES = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@5432/bursary')}
 
 
 
