@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-*v5tp51k&u-*uqe*d-yj)b=sw_st3oaro*x0#81!o-s)7j3lhh
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS= []
-# ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
+# ALLOWED_HOSTS= []
+ALLOWED_HOSTS = ['guarded-ocean-90993.herokuapp.com', 'bursaryapp.co', 'www.bursaryapp.co']
 
 
 # Application definition
@@ -172,4 +172,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
